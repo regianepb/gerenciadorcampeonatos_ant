@@ -17,15 +17,6 @@ import javax.ws.rs.core.Response;
 @Consumes("application/json")
 public class TimeResource {
 
-    @Inject
-    TimeService timeService;
-    
-    @POST
-    public Response create(final TimeDto dto) {
-        timeService.persist(TimeMapper.toEntity(dto));
-        return Response.created(null).build();
-    }
-
-    
+  
     
 }

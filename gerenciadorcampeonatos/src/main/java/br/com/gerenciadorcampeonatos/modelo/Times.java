@@ -9,15 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-@Entity(name = "TIME")
-public class Time implements Serializable {
+@Entity(name = "TIMES")
+public class Times implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
          
     @NotNull
-    @Column(name="NOME",length=100,nullable=false,unique=true)
+    @Column(name="NOME",length=100,nullable=false)
     private String nome;
 
     public Long getId() {
@@ -36,26 +36,6 @@ public class Time implements Serializable {
         this.nome = nome;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.id);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Time other = (Time) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
-    }       
+   
     
 }

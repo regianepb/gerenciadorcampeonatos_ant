@@ -17,7 +17,7 @@ public class Times implements Serializable {
     private Long id;
          
     @NotNull
-    @Column(name="NOME",length=100,nullable=false)
+    @Column(name="NOME",length=100)
     private String nome;
 
     public Long getId() {

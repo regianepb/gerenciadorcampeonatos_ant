@@ -21,7 +21,7 @@ public class JogadorPosicao {
     
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "JOGADOR_ID", nullable = false)
-    private Jogador jogador;
+    private Jogadores jogador;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "POSICAO_ID", nullable = false)
@@ -35,11 +35,11 @@ public class JogadorPosicao {
         this.id = id;
     }
 
-    public Jogador getJogador() {
+    public Jogadores getJogador() {
         return jogador;
     }
 
-    public void setJogador(Jogador jogador) {
+    public void setJogador(Jogadores jogador) {
         this.jogador = jogador;
     }
 

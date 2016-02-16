@@ -2,7 +2,6 @@ package br.com.gerenciadorcampeonatos.modelo;
 
 import java.sql.Blob;
 import java.util.Calendar;
-import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,21 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 
-@Entity(name = "JOGADOR")
-public class Jogador {
+@Entity(name = "JOGADORES")
+public class Jogadores {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
     
-    @Version
-    @Column(name = "VERSION")
-    private Long version;
-        
-    @Column(name="NOME",length=100,nullable=false,unique=true)
+    @NotNull
+    @Column(name="NOME",length=100,unique=true)
     private String nome;    
     
     @Column(name="APELIDO",length=50)
@@ -46,6 +41,7 @@ public class Jogador {
     @Column(name="DDD_CELULAR",length=2)
     private String dddCelular;
     
+    @NotNull
     @Column(name="CELULAR",length=10)
     private String celular;   
     
@@ -59,7 +55,7 @@ public class Jogador {
     private Blob foto;
     
     @Temporal(TemporalType.DATE) 
-    @Column(name="DT_INCLUSAO",nullable=false)
+    @Column(name="DT_INCLUSAO")
     private Calendar dataInclusao;
 
     public Long getId() {
@@ -70,15 +66,7 @@ public class Jogador {
         this.id = id;
     }
 
-    public Long getVersion() {
-        return version;
-    }
-
-    public void setVersion(Long version) {
-        this.version = version;
-    }
-
-    public String getNome() {
+      public String getNome() {
         return nome;
     }
 
@@ -173,31 +161,7 @@ public class Jogador {
     public void setDataInclusao(Calendar dataInclusao) {
         this.dataInclusao = dataInclusao;
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.id);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Jogador other = (Jogador) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
-    
+  
     
 }
 

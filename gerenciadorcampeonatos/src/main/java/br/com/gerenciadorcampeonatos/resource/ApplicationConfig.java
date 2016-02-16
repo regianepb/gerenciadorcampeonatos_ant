@@ -21,6 +21,6 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(br.com.gerenciadorcampeonatos.resource.TimeResource.class);
-
+        resources.add(br.com.gerenciadorcampeonatos.resource.JogadorResource.class);
     }
 }

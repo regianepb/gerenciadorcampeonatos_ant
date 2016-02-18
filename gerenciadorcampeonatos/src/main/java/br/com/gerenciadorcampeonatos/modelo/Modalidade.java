@@ -5,6 +5,5 @@ public enum Modalidade {
     CAMPO,
     SUICO,
     AREIA,
-    OUTROS    
-       
+    OUTROS  
 }

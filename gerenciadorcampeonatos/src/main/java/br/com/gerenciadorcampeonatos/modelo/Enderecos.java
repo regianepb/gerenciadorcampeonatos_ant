@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity(name = "ENDERECO")
-public class Endereco {
+public class Enderecos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -20,9 +20,9 @@ public class Endereco {
     @Column(name="CEP",length=8)
     private String cep;
     
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "BAIRRO_ID", nullable = false)
-    private Bairro bairro;
+    @ManyToOne
+    @JoinColumn(name = "BAIRRO_ID")
+    private Bairros bairro;
   
     @Column(name="LOGRADOURO",length=100)
     private String logradouro;

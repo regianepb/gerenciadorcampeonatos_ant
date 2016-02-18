@@ -17,12 +17,8 @@ public class Posicao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long id;
-    
-    @Version
-    @Column(name = "VERSION")
-    private Long version;
-    
+    private Long id;    
+     
     @NotNull 
     @Column(name="NOME",length=50,nullable=false)
     private String nome;
@@ -45,14 +41,7 @@ public class Posicao {
         this.id = id;
     }
 
-    public Long getVersion() {
-        return version;
-    }
-
-    public void setVersion(Long version) {
-        this.version = version;
-    }
-
+ 
     public String getNome() {
         return nome;
     }
@@ -61,29 +50,7 @@ public class Posicao {
         this.nome = nome;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.id);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Posicao other = (Posicao) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
-    }
- 
-    
+  
     
     
 }

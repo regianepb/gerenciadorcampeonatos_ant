@@ -9,6 +9,6 @@ package br.com.gerenciadorcampeonatos.modelo;
  *
  * @author regiane.borges
  */
-public class Campeonato {
+public class Campeonatos {
     
 }

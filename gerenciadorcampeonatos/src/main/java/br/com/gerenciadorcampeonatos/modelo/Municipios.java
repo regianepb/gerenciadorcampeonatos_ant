@@ -12,8 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
-@Entity(name = "ESTADO")
-public class Estado {
+@Entity(name = "MUNICIPIO")
+public class Municipios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -24,8 +24,8 @@ public class Estado {
     private String nome;
     
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "PAIS_ID", nullable = false)
-    private Pais pais;
+    @JoinColumn(name = "ESTADO_ID", nullable = false)
+    private Estados estado;
 
     public Long getId() {
         return id;
@@ -43,17 +43,17 @@ public class Estado {
         this.nome = nome;
     }
 
-    public Pais getPais() {
-        return pais;
+    public Estados getEstado() {
+        return estado;
     }
 
-    public void setPais(Pais pais) {
-        this.pais = pais;
+    public void setEstado(Estados estado) {
+        this.estado = estado;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
+        int hash = 7;
         hash = 53 * hash + Objects.hashCode(this.id);
         return hash;
     }
@@ -66,15 +66,14 @@ public class Estado {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Estado other = (Estado) obj;
+        final Municipios other = (Municipios) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         return true;
     }
-    
-    
-    
-    
   
+    
+    
+    
 }

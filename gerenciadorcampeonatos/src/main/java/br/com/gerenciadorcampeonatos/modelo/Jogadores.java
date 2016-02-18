@@ -1,18 +1,19 @@
 package br.com.gerenciadorcampeonatos.modelo;
 
+import java.io.Serializable;
 import java.sql.Blob;
-import java.util.Calendar;
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity(name = "JOGADORES")
-public class Jogadores {
+public class Jogadores implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -25,10 +26,9 @@ public class Jogadores {
     @Column(name="APELIDO",length=50)
     private String apelido;
     
-    @Temporal(TemporalType.DATE) 
     @Column(name="DT_NASCIMENTO")
-    private Calendar dataNascimento;
-    
+    private LocalDate dataNascimento;
+        
     @Column(name="RG",length=10)
     private String rg;
     
@@ -54,9 +54,12 @@ public class Jogadores {
     @Column(name="FOTO")
     private Blob foto;
     
-    @Temporal(TemporalType.DATE) 
     @Column(name="DT_INCLUSAO")
-    private Calendar dataInclusao;
+    private LocalDate dataInclusao;
+
+    @ManyToOne
+    @JoinColumn(name = "TIMES_ID")
+    private Times times;
 
     public Long getId() {
         return id;
@@ -66,7 +69,7 @@ public class Jogadores {
         this.id = id;
     }
 
-      public String getNome() {
+    public String getNome() {
         return nome;
     }
 
@@ -82,11 +85,11 @@ public class Jogadores {
         this.apelido = apelido;
     }
 
-    public Calendar getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Calendar dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -154,13 +157,24 @@ public class Jogadores {
         this.foto = foto;
     }
 
-    public Calendar getDataInclusao() {
+    public LocalDate getDataInclusao() {
         return dataInclusao;
     }
 
-    public void setDataInclusao(Calendar dataInclusao) {
+    public void setDataInclusao(LocalDate dataInclusao) {
         this.dataInclusao = dataInclusao;
     }
+
+    public Times getTimes() {
+        return times;
+    }
+
+    public void setTimes(Times times) {
+        this.times = times;
+    }
+    
+    
+  
   
     
 }

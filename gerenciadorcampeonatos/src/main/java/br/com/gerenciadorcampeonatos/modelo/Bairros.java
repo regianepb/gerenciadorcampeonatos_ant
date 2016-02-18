@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity(name = "BAIRRO")
-public class Bairro {
+public class Bairros {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -25,7 +25,7 @@ public class Bairro {
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MUNICIPIO_ID")
-    private Municipio municipio;
+    private Municipios municipio;
 
     public Long getId() {
         return id;
@@ -43,11 +43,11 @@ public class Bairro {
         this.nome = nome;
     }
 
-    public Municipio getMunicipio() {
+    public Municipios getMunicipio() {
         return municipio;
     }
 
-    public void setMunicipio(Municipio municipio) {
+    public void setMunicipio(Municipios municipio) {
         this.municipio = municipio;
     }
 
@@ -66,7 +66,7 @@ public class Bairro {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Bairro other = (Bairro) obj;
+        final Bairros other = (Bairros) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }

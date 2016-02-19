@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity(name = "JOGADOR_POSICAO")
-public class JogadorPosicao {
+public class JogadoresPosicoes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -25,7 +25,7 @@ public class JogadorPosicao {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "POSICAO_ID", nullable = false)
-    private Posicao posicao;
+    private Posicoes posicao;
 
     public Long getId() {
         return id;
@@ -43,11 +43,11 @@ public class JogadorPosicao {
         this.jogador = jogador;
     }
 
-    public Posicao getPosicao() {
+    public Posicoes getPosicao() {
         return posicao;
     }
 
-    public void setPosicao(Posicao posicao) {
+    public void setPosicao(Posicoes posicao) {
         this.posicao = posicao;
     }
 
@@ -66,7 +66,7 @@ public class JogadorPosicao {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final JogadorPosicao other = (JogadorPosicao) obj;
+        final JogadoresPosicoes other = (JogadoresPosicoes) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }

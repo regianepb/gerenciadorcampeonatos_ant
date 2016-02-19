@@ -18,6 +18,8 @@ public class Patrocinadores implements Serializable {
     @NotNull
     @Column(name="NOME",length=100)
     private String nome;
+    
+    /*Incluir novos campos: Logo, face, noem contato, telefone, email*/
 
     public Long getId() {
         return id;

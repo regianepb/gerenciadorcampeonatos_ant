@@ -1,6 +1,6 @@
 package br.com.gerenciadorcampeonatos.dao;
 
-import br.com.gerenciadorcampeonatos.modelo.Times;
+import br.com.gerenciadorcampeonatos.modelo.Enderecos;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -8,42 +8,42 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class TimeDao {
+public class EnderecoDao {
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("gecampeonatoPU");
     EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-    public List<Times> buscarTodosTimes() {
-        List<Times> times = new ArrayList<Times>();
-        Query query = entityManager.createQuery("select t from TIMES as t ");
-        times = query.getResultList();
-        return times;
+    public List<Enderecos> buscarTodosEnderecos() {
+        List<Enderecos> enderecos = new ArrayList<Enderecos>();
+        Query query = entityManager.createQuery("select t from ENDERECOS as t ");
+        enderecos = query.getResultList();
+        return enderecos;
     }
 
-    public Times buscarTime(long id) {
-        Times time = entityManager.find(Times.class, id);
-        return time;
+    public Enderecos buscarEndereco(long id) {
+        Enderecos endereco = entityManager.find(Enderecos.class, id);
+        return endereco;
     }
 
-    public Times criarTime(Times time) {
+    public Enderecos criarEndereco(Enderecos endereco) {
         entityManager.getTransaction().begin();
-        entityManager.persist(time);
+        entityManager.persist(endereco);
         entityManager.getTransaction().commit();
         entityManager.close();
-        return time;
+        return endereco;
     }
 
-    public Times atualizarTime(Times time) {
+    public Enderecos atualizarEndereco(Enderecos endereco) {
         entityManager.getTransaction().begin();
-        entityManager.merge(time);
+        entityManager.merge(endereco);
         entityManager.getTransaction().commit();
         entityManager.close();
-        return time;
+        return endereco;
     }
 
-    public void removerTime(long id) {
-        Times time = this.buscarTime(id);
+    public void removerEndereco(long id) {
+        Enderecos endereco = this.buscarEndereco(id);
         entityManager.getTransaction().begin();
-        entityManager.remove(time);
+        entityManager.remove(endereco);
         entityManager.getTransaction().commit();
         entityManager.close();
     }

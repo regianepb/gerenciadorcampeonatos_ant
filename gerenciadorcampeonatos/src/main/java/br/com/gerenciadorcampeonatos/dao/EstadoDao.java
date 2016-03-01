@@ -1,6 +1,6 @@
 package br.com.gerenciadorcampeonatos.dao;
 
-import br.com.gerenciadorcampeonatos.modelo.Times;
+import br.com.gerenciadorcampeonatos.modelo.Estados;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -8,42 +8,42 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class TimeDao {
+public class EstadoDao {
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("gecampeonatoPU");
     EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-    public List<Times> buscarTodosTimes() {
-        List<Times> times = new ArrayList<Times>();
-        Query query = entityManager.createQuery("select t from TIMES as t ");
-        times = query.getResultList();
-        return times;
+    public List<Estados> buscarTodosEstados() {
+        List<Estados> estados = new ArrayList<Estados>();
+        Query query = entityManager.createQuery("select t from ESTADOS as t ");
+        estados = query.getResultList();
+        return estados;
     }
 
-    public Times buscarTime(long id) {
-        Times time = entityManager.find(Times.class, id);
-        return time;
+    public Estados buscarEstado(long id) {
+        Estados estado = entityManager.find(Estados.class, id);
+        return estado;
     }
 
-    public Times criarTime(Times time) {
+    public Estados criarEstado(Estados estado) {
         entityManager.getTransaction().begin();
-        entityManager.persist(time);
+        entityManager.persist(estado);
         entityManager.getTransaction().commit();
         entityManager.close();
-        return time;
+        return estado;
     }
 
-    public Times atualizarTime(Times time) {
+    public Estados atualizarEstado(Estados estado) {
         entityManager.getTransaction().begin();
-        entityManager.merge(time);
+        entityManager.merge(estado);
         entityManager.getTransaction().commit();
         entityManager.close();
-        return time;
+        return estado;
     }
 
-    public void removerTime(long id) {
-        Times time = this.buscarTime(id);
+    public void removerEstado(long id) {
+        Estados estado = this.buscarEstado(id);
         entityManager.getTransaction().begin();
-        entityManager.remove(time);
+        entityManager.remove(estado);
         entityManager.getTransaction().commit();
         entityManager.close();
     }

@@ -21,7 +21,7 @@ public class Estados {
     private String nome;
     
     @ManyToOne    
-    @JoinColumn(name = "PAIS_ID")
+    @JoinColumn(name = "PAISES_ID")
     private Paises pais;
 
     public Long getId() {

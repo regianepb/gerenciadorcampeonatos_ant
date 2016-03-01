@@ -10,9 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
-@Entity(name = "JOGADOR_POSICAO")
+@Entity(name = "JOGADORES_POSICAO")
 public class JogadoresPosicoes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

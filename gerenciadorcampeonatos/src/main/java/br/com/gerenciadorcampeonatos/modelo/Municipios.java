@@ -1,10 +1,7 @@
 package br.com.gerenciadorcampeonatos.modelo;
 
-import java.util.Objects;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
-@Entity(name = "MUNICIPIO")
+@Entity(name = "MUNICIPIOS")
 public class Municipios {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,11 +17,11 @@ public class Municipios {
     private Long id;
     
     @NotNull
-    @Column(name="NOME",length=100,nullable=false)
+    @Column(name="NOME",length=100)
     private String nome;
     
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "ESTADO_ID", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "ESTADOS_ID")
     private Estados estado;
 
     public Long getId() {
@@ -51,29 +48,6 @@ public class Municipios {
         this.estado = estado;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.id);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Municipios other = (Municipios) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
-    }
-  
-    
-    
+   
     
 }

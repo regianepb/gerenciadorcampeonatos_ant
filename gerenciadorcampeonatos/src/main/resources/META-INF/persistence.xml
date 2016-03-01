@@ -5,6 +5,16 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>br.com.gerenciadorcampeonatos.modelo.Times</class>
     <class>br.com.gerenciadorcampeonatos.modelo.Jogadores</class>
+    <class>br.com.gerenciadorcampeonatos.modelo.Bairros</class>
+    <class>br.com.gerenciadorcampeonatos.modelo.Despesas</class>
+    <class>br.com.gerenciadorcampeonatos.modelo.Enderecos</class>
+    <class>br.com.gerenciadorcampeonatos.modelo.Estados</class>
+    <class>br.com.gerenciadorcampeonatos.modelo.JogadoresPosicoes</class>
+    <class>br.com.gerenciadorcampeonatos.modelo.Modalidades</class>
+    <class>br.com.gerenciadorcampeonatos.modelo.Municipios</class>
+    <class>br.com.gerenciadorcampeonatos.modelo.Paises</class>
+    <class>br.com.gerenciadorcampeonatos.modelo.Patrocinadores</class>
+    <class>br.com.gerenciadorcampeonatos.modelo.Posicoes</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

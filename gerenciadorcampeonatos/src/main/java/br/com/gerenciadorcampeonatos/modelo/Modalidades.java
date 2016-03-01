@@ -16,9 +16,9 @@ public class Modalidades implements Serializable {
     private Long id;
          
     @NotNull
-    @Column(name="NOME",length=100)
-    private String nome;
-    
+    @Column(name="DESCRICAO",length=100)
+    private String descricao;
+
     public Long getId() {
         return id;
     }
@@ -27,14 +27,13 @@ public class Modalidades implements Serializable {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-   
     
 }

@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity(name = "JOGADORES")
@@ -60,6 +61,10 @@ public class Jogadores implements Serializable {
     @ManyToOne
     @JoinColumn(name = "TIMES_ID")
     private Times times;
+    
+    @OneToOne
+    @JoinColumn(name = "ENDERECOS_ID")
+    private Enderecos endereco;
 
     public Long getId() {
         return id;
@@ -172,9 +177,14 @@ public class Jogadores implements Serializable {
     public void setTimes(Times times) {
         this.times = times;
     }
-    
-    
-  
+
+    public Enderecos getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Enderecos endereco) {
+        this.endereco = endereco;
+    } 
   
     
 }

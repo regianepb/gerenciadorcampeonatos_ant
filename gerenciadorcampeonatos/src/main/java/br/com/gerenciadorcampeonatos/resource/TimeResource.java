@@ -36,12 +36,14 @@ public class TimeResource {
     }
 
     @PUT
+    @Path("{id}")
     public Times atualizarTime(Times time) {
         return timeDao.atualizarTime(time);
     }
 
     @DELETE
     @Path("{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
     public void removerTime(@PathParam("id") long id) {
         timeDao.removerTime(id);
     }

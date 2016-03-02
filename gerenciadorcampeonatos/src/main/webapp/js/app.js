@@ -3,15 +3,12 @@
 // Declare app level module which depends on filters, and services
 angular
     .module('ngdemo', [
-            'ngdemo.ctrlUsuario',
             'ngdemo.rodapeDirective',
             'restangular'])
        
    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/dummy', {templateUrl: 'views/main.html', controller: 'HeaderController'});
-        $routeProvider.when('/entidades', {templateUrl: 'views/entidades.html', controller: 'ControllerEntidade'});
-        $routeProvider.when('/usuarios', {templateUrl: 'views/usuarios.html', controller: 'ControllerUsuario'});
-        $routeProvider.when('/cargos', {templateUrl: 'views/cargos.html', controller: 'ControllerCargo'});
+        $routeProvider.when('/times', {templateUrl: 'views/times.html', controller: 'ControllerTime'});
         $routeProvider.otherwise({redirectTo: '/dummy'});
     }])
         

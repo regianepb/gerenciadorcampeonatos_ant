@@ -14,36 +14,43 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("times")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
 public class TimeResource {
+
     private TimeDao timeDao = new TimeDao();
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     public List<Times> buscarTodosTimes() {
         return timeDao.buscarTodosTimes();
     }
 
     @GET
     @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     public Times buscarTime(@PathParam("id") long id) {
         return timeDao.buscarTime(id);
     }
 
     @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     public Times criarTime(Times time) {
         return timeDao.criarTime(time);
     }
 
     @PUT
     @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     public Times atualizarTime(Times time) {
         return timeDao.atualizarTime(time);
     }
 
     @DELETE
     @Path("{id}")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public void removerTime(@PathParam("id") long id) {
         timeDao.removerTime(id);
     }

@@ -53,6 +53,7 @@ function ControllerTime($scope, Restangular) {
         });       
     };
     
+      
    $scope.updateTime = function () {  
         var copiaItem = Restangular.copy($scope.time);
         $scope.time = copiaItem.put().then(function(){

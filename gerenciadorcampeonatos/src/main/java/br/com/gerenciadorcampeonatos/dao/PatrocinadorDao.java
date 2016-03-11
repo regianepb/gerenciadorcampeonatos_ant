@@ -15,7 +15,7 @@ public class PatrocinadorDao {
 
     public List<Patrocinadores> buscarTodosPatrocinadores() {
         List<Patrocinadores> patrocinadores = new ArrayList<Patrocinadores>();
-        Query query = entityManager.createQuery("select t from PATROCINADORES as t ");
+        Query query = entityManager.createQuery("select t from PATROCINADORES as t order by ID");
         patrocinadores = query.getResultList();
         return patrocinadores;
     }

@@ -9,6 +9,7 @@ angular
    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/dummy', {templateUrl: 'views/main.html', controller: 'HeaderController'});
         $routeProvider.when('/times', {templateUrl: 'views/times.html', controller: 'ControllerTime'});
+        $routeProvider.when('/patrocinadores', {templateUrl: 'views/patrocinadores.html', controller: 'ControllerPatrocinador'});
         $routeProvider.otherwise({redirectTo: '/dummy'});
     }])
         

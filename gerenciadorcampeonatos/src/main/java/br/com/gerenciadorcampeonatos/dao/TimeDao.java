@@ -14,7 +14,7 @@ public class TimeDao {
 
     public List<Times> buscarTodosTimes() {
         List<Times> times = new ArrayList<Times>();
-        Query query = entityManager.createQuery("select t from TIMES as t order by id");
+        Query query = entityManager.createQuery("select t from TIMES as t order by ID");
         times = query.getResultList();
         return times;
     }

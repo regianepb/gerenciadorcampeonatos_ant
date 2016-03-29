@@ -10,6 +10,8 @@ angular
         $routeProvider.when('/dummy', {templateUrl: 'views/main.html', controller: 'HeaderController'});
         $routeProvider.when('/times', {templateUrl: 'views/times.html', controller: 'ControllerTime'});
         $routeProvider.when('/patrocinadores', {templateUrl: 'views/patrocinadores.html', controller: 'ControllerPatrocinador'});
+        $routeProvider.when('/despesas', {templateUrl: 'views/despesas.html', controller: 'ControllerDespesa'});
+        $routeProvider.when('/jogadores', {templateUrl: 'views/jogadores.html', controller: 'ControllerJogador'});
         $routeProvider.otherwise({redirectTo: '/dummy'});
     }])
         

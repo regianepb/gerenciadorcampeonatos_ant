@@ -27,7 +27,7 @@ public class Jogadores implements Serializable {
     @Column(name="APELIDO",length=50)
     private String apelido;
     
-    @Column(name="DT_NASCIMENTO")
+    @Column(name="DATANASCIMENTO")
     private LocalDate dataNascimento;
         
     @Column(name="RG",length=10)
@@ -55,7 +55,7 @@ public class Jogadores implements Serializable {
     @Column(name="FOTO")
     private Blob foto;
     
-    @Column(name="DT_INCLUSAO")
+    @Column(name="DATAINCLUSAO")
     private LocalDate dataInclusao;
 
     @ManyToOne

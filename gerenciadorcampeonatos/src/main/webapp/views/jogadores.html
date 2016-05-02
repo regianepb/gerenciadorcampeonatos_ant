@@ -32,7 +32,7 @@
             <th style="width: 10px;"></th>                                                              
             </thead>
             <tbody>
-                <tr  ng-repeat="jogador in jogadors| filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao  |  limitTo:entryLimit">
+                <tr  ng-repeat="jogador in jogadores| filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao  |  limitTo:entryLimit">
                     <td>
                         {{jogador.nome}}
                     </td>    
@@ -78,9 +78,18 @@
                     <form name="inseriLinha">
                         <input type="text" class="form-control" placeholder="Nome" ng-model="jogador.nome" required>
                         <input type="text" class="form-control" placeholder="Apelido" ng-model="jogador.apelido" required>
-                        <input type="date" class="form-control" placeholder="Data de Nascimento" ng-model="jogador.dataNascimento" required>
-                        <input type="text" class="form-control" placeholder="RG" ng-model=jogador.rg" required>
-                        <input type="email" class="form-control" placeholder="E-mail" ng-model="jogador.email" required>
+                        <input type="tel" class="form-control" placeholder="Ddd celular" ng-model="jogador.ddd_celular">
+                        <input type="tel" class="form-control" placeholder="Celular" ng-model="jogador.celular">
+                        <input type="date" class="form-control" placeholder="Data de Nascimento" ng-model="jogador.dataNascimento">
+                        <input type="date" class="form-control" placeholder="Data Inclusão" ng-model="jogador.datainclusao">                        
+                        <input type="text" class="form-control" placeholder="RG" ng-model="jogador.rg">
+                        <input type="email" class="form-control" placeholder="E-mail" ng-model="jogador.email">
+                        <input type="text" class="form-control" placeholder="Facebook" ng-model="jogador.facebook">
+                        <input type="tel" class="form-control" placeholder="Ddd telefone" ng-model="jogador.ddd_telefone">
+                        <input type="tel" class="form-control" placeholder="Telefone" ng-model="jogador.telefone">
+                        <input type="number" class="form-control" placeholder="Time" ng-model="jogador.times_id">
+                        <input type="number" class="form-control" placeholder="Endereço" ng-model="jogador.enderecos_id">
+                        <input type="text" class="form-control" placeholder="Foto" ng-model="jogador.foto">
                     </form>
                 </div>
             </div>
@@ -103,6 +112,18 @@
                 <div class="form-group">
                     <form name="editaLinha">
                         <input type="text" class="form-control" placeholder="Nome" ng-model="jogador.nome" required>
+                        <input type="text" class="form-control" placeholder="Apelido" ng-model="jogador.apelido" required>
+                        <input type="tel" class="form-control" placeholder="Ddd celular" ng-model="jogador.ddd_celular">
+                        <input type="tel" class="form-control" placeholder="Celular" ng-model="jogador.celular">
+                        <input type="date" class="form-control" placeholder="Data de Nascimento" ng-model="jogador.dataNascimento">
+                        <input type="date" class="form-control" placeholder="Data Inclusão" ng-model="jogador.datainclusao">                        
+                        <input type="text" class="form-control" placeholder="RG" ng-model="jogador.rg">
+                        <input type="email" class="form-control" placeholder="E-mail" ng-model="jogador.email">
+                        <input type="text" class="form-control" placeholder="Facebook" ng-model="jogador.facebook">
+                        <input type="tel" class="form-control" placeholder="Ddd telefone" ng-model="jogador.ddd_telefone">
+                        <input type="tel" class="form-control" placeholder="Telefone" ng-model="jogador.telefone">
+                        <input type="number" class="form-control" placeholder="Time" ng-model="jogador.times_id">
+                        <input type="number" class="form-control" placeholder="Endereço" ng-model="jogador.enderecos_id">
                     </form>
                 </div>
                 <div class="modal-footer">

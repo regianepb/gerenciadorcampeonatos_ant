@@ -1,9 +1,11 @@
 package br.com.gerenciadorcampeonatos.modelo;
 
+import br.com.gerenciadorcampeonatos.util.LocalDateAttributeConverter;
 import java.io.Serializable;
 import java.sql.Blob;
 import java.time.LocalDate;
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,6 +30,7 @@ public class Jogadores implements Serializable {
     private String apelido;
     
     @Column(name="DATANASCIMENTO")
+    @Convert(converter = LocalDateAttributeConverter.class)
     private LocalDate dataNascimento;
         
     @Column(name="RG",length=10)
@@ -56,6 +59,7 @@ public class Jogadores implements Serializable {
     private Blob foto;
     
     @Column(name="DATAINCLUSAO")
+    @Convert(converter = LocalDateAttributeConverter.class)
     private LocalDate dataInclusao;
 
     @ManyToOne

@@ -31,5 +31,6 @@ public class ApplicationConfig extends Application {
         resources.add(br.com.gerenciadorcampeonatos.resource.PatrocinadorResource.class);
         resources.add(br.com.gerenciadorcampeonatos.resource.PosicaoResource.class);
         resources.add(br.com.gerenciadorcampeonatos.resource.TimeResource.class);
+        resources.add(br.com.gerenciadorcampeonatos.util.JacksonJavaTimeConfiguration.class);
     }
 }

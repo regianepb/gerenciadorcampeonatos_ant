@@ -40,7 +40,8 @@ function ControllerJogador($scope, Restangular) {
         });
    };
 
-   $scope.createNewJogador = function () {             
+   $scope.createNewJogador = function () {     
+       console.log($scope.jogador);
         Restangular.all('jogadores').post($scope.jogador).then(function(){
             atualizaLista();
             $scope.jogador = null;

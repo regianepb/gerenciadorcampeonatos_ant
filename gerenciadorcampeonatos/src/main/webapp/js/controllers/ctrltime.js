@@ -40,7 +40,8 @@ function ControllerTime($scope, Restangular) {
         });
    };
 
-   $scope.createNewTime = function () {             
+   $scope.createNewTime = function () {    
+       console.log($scope.time);
         Restangular.all('times').post($scope.time).then(function(){
             atualizaLista();
             $scope.time = null;

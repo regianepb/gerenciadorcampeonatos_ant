@@ -2,7 +2,6 @@ package br.com.gerenciadorcampeonatos.modelo;
 
 import br.com.gerenciadorcampeonatos.util.LocalDateAttributeConverter;
 import java.io.Serializable;
-import java.sql.Blob;
 import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Convert;
@@ -12,7 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity(name = "JOGADORES")
@@ -23,40 +21,40 @@ public class Jogadores implements Serializable {
     private Long id;
     
     @NotNull
-    @Column(name="NOME",length=100,unique=true)
+    @Column(name="NOME")
     private String nome;    
     
-    @Column(name="APELIDO",length=50)
+    @Column(name="APELIDO")
     private String apelido;
     
     @Column(name="DATANASCIMENTO")
     @Convert(converter = LocalDateAttributeConverter.class)
     private LocalDate dataNascimento;
         
-    @Column(name="RG",length=10)
+    @Column(name="RG")
     private String rg;
     
-    @Column(name="DDD_TELEFONE",length=2)
+    @Column(name="DDD_TELEFONE")
     private String dddTelefone;
     
-    @Column(name="TELEFONE",length=10)
+    @Column(name="TELEFONE")
     private String telefone;
     
-    @Column(name="DDD_CELULAR",length=2)
+    @Column(name="DDD_CELULAR")
     private String dddCelular;
     
     @NotNull
-    @Column(name="CELULAR",length=10)
+    @Column(name="CELULAR")
     private String celular;   
     
-    @Column(name="EMAIL",length=50)
+    @Column(name="EMAIL")
     private String email;
     
-    @Column(name="FACEBOOK",length=50)
+    @Column(name="FACEBOOK")
     private String facebook;
     
     @Column(name="FOTO")
-    private Blob foto;
+    private String foto;
     
     @Column(name="DATAINCLUSAO")
     @Convert(converter = LocalDateAttributeConverter.class)
@@ -65,11 +63,11 @@ public class Jogadores implements Serializable {
     @ManyToOne
     @JoinColumn(name = "TIMES_ID")
     private Times times;
-    
+    /*
     @OneToOne
     @JoinColumn(name = "ENDERECOS_ID")
     private Enderecos endereco;
-
+    */
     public Long getId() {
         return id;
     }
@@ -158,11 +156,11 @@ public class Jogadores implements Serializable {
         this.facebook = facebook;
     }
 
-    public Blob getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(Blob foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 
@@ -181,7 +179,7 @@ public class Jogadores implements Serializable {
     public void setTimes(Times times) {
         this.times = times;
     }
-
+/*
     public Enderecos getEndereco() {
         return endereco;
     }
@@ -189,7 +187,7 @@ public class Jogadores implements Serializable {
     public void setEndereco(Enderecos endereco) {
         this.endereco = endereco;
     } 
-  
+  */
     
 }
 

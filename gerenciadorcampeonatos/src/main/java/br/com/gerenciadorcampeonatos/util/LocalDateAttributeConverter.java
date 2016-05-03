@@ -9,14 +9,14 @@ import javax.persistence.Converter;
 
 @Converter(autoApply = true)
 public class LocalDateAttributeConverter implements AttributeConverter<LocalDate, Date> {
-	
+
     @Override
-    public Date convertToDatabaseColumn(LocalDate locDate) {
-    	return (locDate == null ? null : Date.valueOf(locDate));
+    public Date convertToDatabaseColumn(LocalDate entityValue) {
+        return (entityValue == null) ? null : Date.valueOf(entityValue);
     }
 
     @Override
-    public LocalDate convertToEntityAttribute(Date sqlDate) {
-    	return (sqlDate == null ? null : sqlDate.toLocalDate());
+    public LocalDate convertToEntityAttribute(Date databaseValue) {
+        return (databaseValue == null) ? null : databaseValue.toLocalDate();
     }
 }

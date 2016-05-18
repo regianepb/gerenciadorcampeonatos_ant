@@ -3,6 +3,7 @@ package br.com.gerenciadorcampeonatos.modelo;
 import br.com.gerenciadorcampeonatos.util.LocalDateAttributeConverter;
 import java.io.Serializable;
 import java.time.LocalDate;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity(name = "JOGADORES")
@@ -63,11 +65,11 @@ public class Jogadores implements Serializable {
     @ManyToOne
     @JoinColumn(name = "TIMES_ID")
     private Times times;
-    /*
-    @OneToOne
+    
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ENDERECOS_ID")
-    private Enderecos endereco;
-    */
+    private Enderecos enderecos;
+    
     public Long getId() {
         return id;
     }
@@ -179,15 +181,18 @@ public class Jogadores implements Serializable {
     public void setTimes(Times times) {
         this.times = times;
     }
-/*
-    public Enderecos getEndereco() {
-        return endereco;
+
+    public Enderecos getEnderecos() {
+        return enderecos;
     }
 
-    public void setEndereco(Enderecos endereco) {
-        this.endereco = endereco;
-    } 
-  */
+    public void setEnderecos(Enderecos enderecos) {
+        this.enderecos = enderecos;
+    }
+
+    
+    
+    
     
 }
 

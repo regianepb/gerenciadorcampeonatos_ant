@@ -20,7 +20,7 @@ public class JogadorResource {
     private JogadorDao jogadorDao = new JogadorDao();
 
     @GET
-    public List<Jogadores> buscarTodosJogadors() {
+    public List<Jogadores> buscarTodosJogadores() {
         return jogadorDao.buscarTodosJogadores();
     }
 
@@ -31,13 +31,14 @@ public class JogadorResource {
     }
 
     @POST
-    public Jogadores criarJogador(Jogadores time) {
-        return jogadorDao.criarJogador(time);
+    public Jogadores criarJogador(Jogadores jogador) {
+        return jogadorDao.criarJogador(jogador);
     }
 
     @PUT
-    public Jogadores atualizarJogador(Jogadores time) {
-        return jogadorDao.atualizarJogador(time);
+    @Path("{id}")
+    public Jogadores atualizarJogador(Jogadores jogador) {
+        return jogadorDao.atualizarJogador(jogador);
     }
 
     @DELETE

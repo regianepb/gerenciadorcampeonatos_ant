@@ -1,6 +1,7 @@
 package br.com.gerenciadorcampeonatos.modelo;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,10 +20,6 @@ public class Enderecos implements Serializable {
     @Column(name="CEP",length=8)
     private String cep;
     
-    @ManyToOne
-    @JoinColumn(name = "BAIRROS_ID")
-    private Bairros bairro;
-  
     @Column(name="LOGRADOURO",length=100)
     private String logradouro;
     
@@ -31,6 +28,12 @@ public class Enderecos implements Serializable {
     
     @Column(name="COMPLEMENTO",length=200)
     private String complemento;
+    
+    
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "BAIRROS_ID")
+    private Bairros bairros;
+    
 
     public Long getId() {
         return id;
@@ -49,11 +52,11 @@ public class Enderecos implements Serializable {
     }
 
     public Bairros getBairro() {
-        return bairro;
+        return bairros;
     }
 
     public void setBairro(Bairros bairro) {
-        this.bairro = bairro;
+        this.bairros = bairro;
     }
 
     public String getLogradouro() {

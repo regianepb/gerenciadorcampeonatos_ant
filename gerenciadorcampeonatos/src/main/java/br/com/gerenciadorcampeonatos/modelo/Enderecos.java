@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity(name = "ENDERECOS")
 public class Enderecos implements Serializable {
@@ -30,7 +31,7 @@ public class Enderecos implements Serializable {
     private String complemento;
     
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "BAIRROS_ID")
     private Bairros bairros;
     
@@ -49,14 +50,6 @@ public class Enderecos implements Serializable {
 
     public void setCep(String cep) {
         this.cep = cep;
-    }
-
-    public Bairros getBairro() {
-        return bairros;
-    }
-
-    public void setBairro(Bairros bairro) {
-        this.bairros = bairro;
     }
 
     public String getLogradouro() {
@@ -81,6 +74,14 @@ public class Enderecos implements Serializable {
 
     public void setComplemento(String complemento) {
         this.complemento = complemento;
+    }
+
+    public Bairros getBairros() {
+        return bairros;
+    }
+
+    public void setBairros(Bairros bairros) {
+        this.bairros = bairros;
     }
     
     

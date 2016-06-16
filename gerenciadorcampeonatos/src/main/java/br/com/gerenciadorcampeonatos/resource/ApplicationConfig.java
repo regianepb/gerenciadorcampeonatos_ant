@@ -21,6 +21,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(br.com.gerenciadorcampeonatos.resource.BairroResource.class);
+        resources.add(br.com.gerenciadorcampeonatos.resource.CampeonatoResource.class);
         resources.add(br.com.gerenciadorcampeonatos.resource.DespesaResource.class);
         resources.add(br.com.gerenciadorcampeonatos.resource.EnderecoResource.class);
         resources.add(br.com.gerenciadorcampeonatos.resource.EstadoResource.class);

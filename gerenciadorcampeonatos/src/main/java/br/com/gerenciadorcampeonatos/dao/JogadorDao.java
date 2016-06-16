@@ -22,8 +22,8 @@ public class JogadorDao {
     }
 
     public Jogadores buscarJogador(long id) {
-        Jogadores time = entityManager.find(Jogadores.class, id);
-        return time;
+        Jogadores jogador = entityManager.find(Jogadores.class, id);
+        return jogador;
     }
 
     public Jogadores criarJogador(Jogadores jogador) {

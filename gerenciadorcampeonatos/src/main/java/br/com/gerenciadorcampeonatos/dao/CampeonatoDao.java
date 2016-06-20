@@ -15,10 +15,10 @@ public class CampeonatoDao {
     EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     public List<Campeonatos> buscarTodosCampeonatos() {
-        List<Campeonatos> campeonatoes = new ArrayList<Campeonatos>();
+        List<Campeonatos> campeonatos = new ArrayList<Campeonatos>();
         Query query = entityManager.createQuery("select t from CAMPEONATOS as t ");
-        campeonatoes = query.getResultList();
-        return campeonatoes;
+        campeonatos = query.getResultList();
+        return campeonatos;
     }
 
     public Campeonatos buscarCampeonato(long id) {

@@ -27,7 +27,7 @@
       <property name="hibernate.format_sql" value="true"/>
       <!--  atualiza o banco, gera as tabelas se for preciso -->
       <property name="hibernate.hbm2ddl.auto" value="update"/>
-     <!-- <property name="javax.persistence.sql-load-script-source" value="load.sql"/>  -->
+      <!-- <property name="javax.persistence.sql-load-script-source" value="load.sql"/>  -->
     </properties>
   </persistence-unit>
 </persistence>

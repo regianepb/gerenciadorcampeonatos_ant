@@ -66,6 +66,8 @@
     </div>
 </div>
 
+
+
 <div class="modal fade" id="inserir">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -74,6 +76,57 @@
                 <h4 class="modal-title">Adicionando Jogador</h4>
             </div>
             <div class="modal-body">
+
+                <div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#jogador" aria-controls="home" role="tab" data-toggle="tab">Jogador</a></li>
+                        <li role="presentation"><a href="#endereco" aria-controls="profile" role="tab" data-toggle="tab">Endereço</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="jogador"> 
+                            <div class="form-group">
+                                <form name="inseriLinha">
+                                    <label>Nome</label>
+                                    <input type="text" class="form-control" placeholder="Nome" ng-model="jogador.nome" required>
+                                    <label>Apelido</label>
+                                    <input type="text" class="form-control" placeholder="Apelido" ng-model="jogador.apelido" required>
+                                    <label>Celular</label>
+                                    <input type="tel" class="form-control" placeholder="Ddd celular" ng-model="jogador.dddCelular">
+                                    <input type="tel" class="form-control" placeholder="Celular" ng-model="jogador.celular">
+                                    <input type="date" class="form-control" placeholder="Data de Nascimento" ng-model="jogador.dataNascimento">
+                                    <input type="date" class="form-control" placeholder="Data Inclusão" ng-model="jogador.dataInclusao">                        
+                                    <input type="text" class="form-control" placeholder="RG" ng-model="jogador.rg">
+                                    <input type="email" class="form-control" placeholder="E-mail" ng-model="jogador.email">
+                                    <input type="text" class="form-control" placeholder="Facebook" ng-model="jogador.facebook">
+                                    <input type="tel" class="form-control" placeholder="Ddd telefone" ng-model="jogador.dddTelefone">
+                                    <input type="tel" class="form-control" placeholder="Telefone" ng-model="jogador.telefone">
+                                    <input type="number" class="form-control" placeholder="Time" ng-model="jogador.times.id">
+                                    <input type="text" class="form-control" placeholder="Foto" ng-model="jogador.foto">              
+
+                                </form>
+                            </div>
+
+                        </div>
+
+
+                        <div role="tabpanel" class="tab-pane" id="endereco"><div class="form-group">
+                                <form name="inseriLinha">
+                                    <input type="text" class="form-control" placeholder="Rua" ng-model="jogador.enderecos.logradouro">
+                                    <input type="text" class="form-control" placeholder="Complemento" ng-model="jogador.enderecos.complemento">
+                                    <input type="text" class="form-control" placeholder="Número" ng-model="jogador.enderecos.numero">                        
+                                    <input type="text" class="form-control" placeholder="CEP" ng-model="jogador.enderecos.cep">                        
+                                    <input type="text" class="form-control" placeholder="Bairro" ng-model="jogador.enderecos.bairros.descricao">
+                                    <input type="number" class="form-control" placeholder="Município" ng-model="jogador.enderecos.bairros.municipio.id">
+                                </form>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+
+                <!--
                 <div class="form-group">
                     <form name="inseriLinha">
                         <input type="text" class="form-control" placeholder="Nome" ng-model="jogador.nome" required>
@@ -96,7 +149,8 @@
                         <input type="text" class="form-control" placeholder="Bairro" ng-model="jogador.enderecos.bairros.descricao">
                         <input type="number" class="form-control" placeholder="Município" ng-model="jogador.enderecos.bairros.municipio.id">
                     </form>
-                </div>
+                </div> -->
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="limpaVariaveis()">Fechar</button>
@@ -116,7 +170,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <form name="editaLinha">
-                       <input type="text" class="form-control" placeholder="Nome" ng-model="jogador.nome" required>
+                        <input type="text" class="form-control" placeholder="Nome" ng-model="jogador.nome" required>
                         <input type="text" class="form-control" placeholder="Apelido" ng-model="jogador.apelido" required>
                         <input type="tel" class="form-control" placeholder="Ddd celular" ng-model="jogador.dddCelular">
                         <input type="tel" class="form-control" placeholder="Celular" ng-model="jogador.celular">
